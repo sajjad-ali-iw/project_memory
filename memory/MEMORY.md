@@ -1,0 +1,35 @@
+# Memory Index
+
+- [Build scope plan](build-scope-plan.md) — homepage + Contact Us + About Us all DONE (2026-06-21) → STOP & wait for next instruction
+
+- [Working style: beginner pacing](working-style-beginner-pacing.md) — guide one tiny step at a time; pixel-perfect to staging
+- [Fonts sourced from staging](fonts-sourced-from-staging.md) — happy font + AlmadenSans, fetched over HTTP from staging
+- [Logo variants](logo-variants.md) — dark logo live on white header; white logo reserved for colored home hero
+- [Header mega-menu port](header-megamenu-port.md) — how the mega-menu was rebuilt; image-optimize todo; template-part Reset gotcha
+- [Hero + front page](hero-and-frontpage.md) — hero pattern, arrow carousel, WP_DEVELOPMENT_MODE config, exact staging type values
+- [Section port method](section-port-method.md) — how to port staging's custom sections (scope CSS, JS file, pattern); Industries tabs done
+- [Front Page DB template override](frontpage-db-template-override.md) — if homepage ignores theme-file edits, Reset the Front Page template in Site Editor
+- [Case Studies component](case-studies-component.md) — separate carousel section after hero; white intro card + lavender arrows + dark pill dots
+- [Industries build](industries-build.md) — /industries/ landing grid; ARCH CHANGE 2026-06-23: per-industry *-page.php DELETED, content baked into pages (MCP-managed); one `industry-starter` scaffold + section components remain
+- [Footer build](footer-build.md) — footer pixel-matched to staging (done 2026-06-21); partner-logo + tagline gotchas
+- [Case Studies archive page](case-studies-archive-page.md) — /case-studies/ listing (grid + Shopify/Odoo filters), page id 38, done 2026-06-21
+- [Lazy-load hidden tabs gotcha](lazy-load-hidden-tabs-gotcha.md) — loading="lazy" imgs in hidden JS tab panels never load on reveal; use decoding="async"
+- [Blog clone from staging](blog-clone-from-staging.md) — all 30 staging blogs cloned to local 2026-06-21 (featured images localized; inline images still staging-hosted)
+- [Case Studies detail pages](case-studies-detail-pages.md) — 9 /case-studies/<slug>/ pages (.ix-csd design), bulk-imported via temp DOMDocument PHP, done 2026-06-21
+- [Contact + About pages](contact-about-pages.md) — Contact (id 22, green form card on purple bleed) + About (id 126, story timeline/values/CTA), pixel-matched, done 2026-06-21
+- [Mobile responsiveness](mobile-responsiveness.md) — foundation solid (hamburger, grids collapse); added safety nets + ≤480 tier; browser pinned to desktop so USER verifies mobile visually
+- [Carousel guidelines](carousel-guidelines.md) — THE standard recipe for any carousel (dots #D6D1E8 / active #060038 pill, full-bleed centered-peek mobile, shared swipe/autoplay JS)
+- [Button system](button-system.md) — site-wide buttons: Almaden 600, radius 12, Large 16/54 + Standard 14/46
+- [Header active nav](header-active-nav.md) — single lavender active indicator: default Contact Us, moves to current menu page (nav-active.js)
+- [Mobile drawer menu](mobile-drawer-menu.md) — mobile header = slide-in drawer (.ixm-*) ported from staging Elementor popup; 3 panels, drives off .ix-burger; old dropdown hidden ≤1024 (2026-06-23)
+- [Footer mobile accordion](footer-mobile-accordion.md) — footer link columns collapse to tap-to-open accordions ≤600px (footer-accordion.js wraps links, toggles .open); matches staging (2026-06-23)
+- [No eyebrow in hero](no-eyebrow-in-hero.md) — RULE: never place the eyebrow/badge label in a hero section (eyebrows OK in non-hero section headers)
+- [Text color rule](text-color-rule-black-white.md) — RULE: body text + bullets always black/white; purple ONLY for clickable links
+- [FAQ accordion smooth](faq-accordion-smooth.md) — smooth single-open FAQ; <details> transition gotcha (animate via class on always-open details, not native toggle)
+- [Support page build](support-page-build.md) — /support/ (id 361) cloned pixel-perfect 2026-06-22; one .ix-sup* pattern; GOTCHA: big webp renders white in-page → use JPG
+- [Always supply images on reuse](always-supply-images-on-reuse.md) — RULE: reusing a component = fill EVERY image slot with a real page image (never blank/stale); Service Tabs needs 1 img/tab
+- [Component catalog doc](component-catalog-doc.md) — team-facing docs/COMPONENTS.md; grouped by family, #1–#17 finalized; keep cross-ref numbers fixed; then write WORKFLOW.md
+- [Image WebP + Media Library](image-webp-media-library.md) — all 177 rasters→WebP q90 + 11 SVGs in LOCAL Media Library (tagged _iw_src; SVG support in functions.php); refs REPOINTED 2026-06-23 via render_block filter + industry-tabs.js source edit
+- [Image slot aspect ratios](image-slot-aspect-ratios.md) — all component image slots aspect-ratio + object-fit:cover locked (2026-06-23) so MCP images can't break layout; per-slot ratio table in docs/COMPONENTS.md §C
+- [MCP absolute-URL protocol gotcha](mcp-absolute-url-protocol-gotcha.md) — MCP pages bake https:// image URLs that fail on the http site → blank images look like "extra space"; fix = root-relative URLs (mechanical-industry carousel fixed 2026-06-23)
+- [Booking page + iframe KSES gotcha](booking-page-and-iframe-kses.md) — /book-a-free-appointment/ (id 575) Google Calendar embed, works; KSES strips iframes unless saved as admin (matters for MCP/CLI page creation)
