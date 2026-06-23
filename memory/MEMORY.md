@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Team memory git repo](team-memory-git-repo.md) — memory now lives in committed project_memory/ repo (shared with team via git); write new memory here, not the hidden path
 - [Build scope plan](build-scope-plan.md) — homepage + Contact Us + About Us all DONE (2026-06-21) → STOP & wait for next instruction
 
 - [Working style: beginner pacing](working-style-beginner-pacing.md) — guide one tiny step at a time; pixel-perfect to staging
