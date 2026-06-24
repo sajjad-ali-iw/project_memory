@@ -38,3 +38,4 @@
 - [Print on Demand page](print-on-demand-page.md) — /print-on-demand/ (id 657, prelive), 9-section baked markup, 10 Pexels images, done 2026-06-24
 - [Icon cards baked pages fix](icon-cards-baked-pages-fix.md) — CSS nth-child background-image fix for empty icon spans on baked industry pages (2026-06-24)
 - [Multi-dev collaboration](multi-dev-collaboration.md) — Git + ChemiCloud plan decided 2026-06-24; docs/COLLABORATION.md in theme; MCP → prelive.indexworld.net (royal-mcp-prelive)
+- [Blog bold-link color gotcha](blog-bold-link-color-gotcha.md) — bold/italic text inside blog links renders dark unless components.css L1583 (.ix-post__body a strong/b/em/i{color:inherit}) is deployed + LiteSpeed purged; never hand-edit post inline color; theme CSS deploy checklist (push origin/main → LiteSpeed Purge All)
