@@ -35,3 +35,6 @@
 - [MCP absolute-URL protocol gotcha](mcp-absolute-url-protocol-gotcha.md) — MCP pages bake https:// image URLs that fail on the http site → blank images look like "extra space"; fix = root-relative URLs (mechanical-industry carousel fixed 2026-06-23)
 - [Booking page + iframe KSES gotcha](booking-page-and-iframe-kses.md) — /book-a-free-appointment/ (id 575) Google Calendar embed, works; KSES strips iframes unless saved as admin (matters for MCP/CLI page creation)
 - [Chemical Industry page](chemical-industry-page.md) — /chemical-industry/ (id 640) built on prelive 2026-06-23 (patterns/chemical-page.php, 10 Pexels imgs, grid card added). ⚠️ THIS machine has NO MCP — create pages via CLI PHP bootstrap (MySQL :10005, pre-define DB_HOST, load php_mysqli.dll); WP_DEVELOPMENT_MODE now set in wp-config
+- [Print on Demand page](print-on-demand-page.md) — /print-on-demand/ (id 657, prelive), 9-section baked markup, 10 Pexels images, done 2026-06-24
+- [Icon cards baked pages fix](icon-cards-baked-pages-fix.md) — CSS nth-child background-image fix for empty icon spans on baked industry pages (2026-06-24)
+- [Multi-dev collaboration](multi-dev-collaboration.md) — Git + ChemiCloud plan decided 2026-06-24; docs/COLLABORATION.md in theme; MCP → prelive.indexworld.net (royal-mcp-prelive)
