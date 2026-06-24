@@ -5,7 +5,7 @@
 - [Working style: beginner pacing](working-style-beginner-pacing.md) — guide one tiny step at a time; pixel-perfect to staging
 - [Fonts sourced from staging](fonts-sourced-from-staging.md) — happy font + AlmadenSans, fetched over HTTP from staging
 - [Logo variants](logo-variants.md) — dark logo live on white header; white logo reserved for colored home hero
-- [Header mega-menu port](header-megamenu-port.md) — how the mega-menu was rebuilt; image-optimize todo; template-part Reset gotcha
+- [Header mega-menu port](header-megamenu-port.md) — how the mega-menu was rebuilt; template-part Reset gotcha (hover-image optimize + mobile nav now DONE via WebP migration + mobile drawer)
 - [Hero + front page](hero-and-frontpage.md) — hero pattern, arrow carousel, WP_DEVELOPMENT_MODE config, exact staging type values
 - [Section port method](section-port-method.md) — how to port staging's custom sections (scope CSS, JS file, pattern); Industries tabs done
 - [Front Page DB template override](frontpage-db-template-override.md) — if homepage ignores theme-file edits, Reset the Front Page template in Site Editor
@@ -14,7 +14,7 @@
 - [Footer build](footer-build.md) — footer pixel-matched to staging (done 2026-06-21); partner-logo + tagline gotchas
 - [Case Studies archive page](case-studies-archive-page.md) — /case-studies/ listing (grid + Shopify/Odoo filters), page id 38, done 2026-06-21
 - [Lazy-load hidden tabs gotcha](lazy-load-hidden-tabs-gotcha.md) — loading="lazy" imgs in hidden JS tab panels never load on reveal; use decoding="async"
-- [Blog clone from staging](blog-clone-from-staging.md) — all 30 staging blogs cloned to local 2026-06-21 (featured images localized; inline images still staging-hosted)
+- [Blog clone from staging](blog-clone-from-staging.md) — all 30 staging blogs cloned to local 2026-06-21 (featured + inline images fully localized, zero staging refs; internal links root-relative). PENDING: image-declutter rollout to image-heavy posts (owner go), + some links 404 until industry pages built
 - [Case Studies detail pages](case-studies-detail-pages.md) — 9 /case-studies/<slug>/ pages (.ix-csd design), bulk-imported via temp DOMDocument PHP, done 2026-06-21
 - [Contact + About pages](contact-about-pages.md) — Contact (id 22, green form card on purple bleed) + About (id 126, story timeline/values/CTA), pixel-matched, done 2026-06-21
 - [Mobile responsiveness](mobile-responsiveness.md) — foundation solid (hamburger, grids collapse); added safety nets + ≤480 tier; browser pinned to desktop so USER verifies mobile visually
@@ -28,8 +28,9 @@
 - [FAQ accordion smooth](faq-accordion-smooth.md) — smooth single-open FAQ; <details> transition gotcha (animate via class on always-open details, not native toggle)
 - [Support page build](support-page-build.md) — /support/ (id 361) cloned pixel-perfect 2026-06-22; one .ix-sup* pattern; GOTCHA: big webp renders white in-page → use JPG
 - [Always supply images on reuse](always-supply-images-on-reuse.md) — RULE: reusing a component = fill EVERY image slot with a real page image (never blank/stale); Service Tabs needs 1 img/tab
-- [Component catalog doc](component-catalog-doc.md) — team-facing docs/COMPONENTS.md; grouped by family, #1–#17 finalized; keep cross-ref numbers fixed; then write WORKFLOW.md
+- [Component catalog doc](component-catalog-doc.md) — team-facing docs/COMPONENTS.md (#1–#17 + Section B page patterns/scaffolds DONE 2026-06-23) + docs/WORKFLOW.md (build/edit guide) DONE 2026-06-23; keep both in sync for the team
 - [Image WebP + Media Library](image-webp-media-library.md) — all 177 rasters→WebP q90 + 11 SVGs in LOCAL Media Library (tagged _iw_src; SVG support in functions.php); refs REPOINTED 2026-06-23 via render_block filter + industry-tabs.js source edit
 - [Image slot aspect ratios](image-slot-aspect-ratios.md) — all component image slots aspect-ratio + object-fit:cover locked (2026-06-23) so MCP images can't break layout; per-slot ratio table in docs/COMPONENTS.md §C
 - [MCP absolute-URL protocol gotcha](mcp-absolute-url-protocol-gotcha.md) — MCP pages bake https:// image URLs that fail on the http site → blank images look like "extra space"; fix = root-relative URLs (mechanical-industry carousel fixed 2026-06-23)
 - [Booking page + iframe KSES gotcha](booking-page-and-iframe-kses.md) — /book-a-free-appointment/ (id 575) Google Calendar embed, works; KSES strips iframes unless saved as admin (matters for MCP/CLI page creation)
+- [Chemical Industry page](chemical-industry-page.md) — /chemical-industry/ (id 640) built on prelive 2026-06-23 (patterns/chemical-page.php, 10 Pexels imgs, grid card added). ⚠️ THIS machine has NO MCP — create pages via CLI PHP bootstrap (MySQL :10005, pre-define DB_HOST, load php_mysqli.dll); WP_DEVELOPMENT_MODE now set in wp-config

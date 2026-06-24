@@ -23,7 +23,15 @@ Blog Carousel / Case Studies Carousel / Icon Card Grid / Numbered Cards / Indust
 Media+Text / Process Steps / Tools & Frameworks (trusted) / Social Proof (testimonial) /
 FAQ Accordion / Closing CTA. Section B: blog-list (hidden via `Inserter: no`).
 
-**Still to walk one-by-one:** industries-why, odoo-implementation, about/about-page, contact,
-case-studies-archive, footer, industry-starter, landing-starter. (blog-hero was skipped by owner.)
-After components: write the WORKFLOW.md (how to build/edit future pages). Related rule:
+**Section B — DONE 2026-06-23.** All page-specific patterns + scaffolds are now documented in
+`docs/COMPONENTS.md` Section B: footer, contact, about-page, case-studies-archive, support-page,
+odoo-implementation, furniture-page (whole-page patterns), plus industry-starter / landing-starter
+(scaffolds that intentionally stay in the inserter). industries-why + blog-list were already there.
+(blog-hero was skipped by owner.) ⚠️ NOTE: the 7 whole-page patterns are still registered WITHOUT
+`Inserter: no`, so they currently show in the inserter — flagged in the doc; add `"Inserter":"no"` to
+each header if the owner wants them hidden (the `wp:pattern` slug ref keeps resolving either way).
+
+**WORKFLOW.md — DONE 2026-06-23.** `docs/WORKFLOW.md` written: mental model, build-a-new-page (2 routes),
+add/edit a component, validation (Windows Local PHP path), image pipeline, staging mirror trick,
+gotchas, env migration. Owner shares both docs with their team — keep them in sync. Related rule:
 [[always-supply-images-on-reuse]].
