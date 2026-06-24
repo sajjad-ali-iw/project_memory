@@ -6,7 +6,7 @@ GitHub repo so **every teammate's Claude reads the same context**. Multiple peop
 ## What's inside
 
 ```
-project-memory/
+project_memory/
 ├── README.md                 ← this file
 ├── CLAUDE.md                 ← copy of project instructions (live copy is at the repo root)
 ├── COMPONENTS.md             ← copy of the component catalog (live copy in the theme's docs/)
@@ -19,17 +19,17 @@ The `memory/` subfolder is the important one — `MEMORY.md` is the index, and e
 
 ## How the team uses it
 
-1. **Pull the repo** → you automatically get all the memory in `project-memory/memory/`.
+1. **Pull the repo** → you automatically get all the memory in `project_memory/memory/`.
 2. **Your Claude reads it automatically** — the repo-root `CLAUDE.md` tells Claude that team
-   memory lives in `./project-memory/memory/`, so it loads `MEMORY.md` at the start of a session.
-   (If it ever doesn't, just say: *"the project memory is in ./project-memory/memory — read it."*)
+   memory lives in `./project_memory/memory/`, so it loads `MEMORY.md` at the start of a session.
+   (If it ever doesn't, just say: *"the project memory is in ./project_memory/memory — read it."*)
 3. **When Claude learns something worth keeping**, it writes a new `<slug>.md` into
-   `project-memory/memory/` and adds a one-line pointer to `MEMORY.md`.
+   `project_memory/memory/` and adds a one-line pointer to `MEMORY.md`.
 4. **Commit & push** those memory changes so the rest of the team gets them.
 
 ## Rules (so the shared memory stays clean)
 
-- The committed `project-memory/memory/` is the **single source of truth**. Don't keep project
+- The committed `project_memory/memory/` is the **single source of truth**. Don't keep project
   memory in the per-user hidden `~/.claude/...` path — that copy isn't shared with anyone.
 - One fact per file. Update an existing file rather than creating a duplicate.
 - Always update `MEMORY.md` when you add/rename/remove a memory file.
