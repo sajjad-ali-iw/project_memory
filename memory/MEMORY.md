@@ -1,5 +1,7 @@
 # Memory Index
 
+- [Overhaul 2026-07-02](overhaul-2026-07-02.md) — services tabs content + branded imagery set (OLD IMAGE FILENAMES DELETED — see file), About footprint section, 404→302 fallbacks for unbuilt industry pages, footer card hover animation; WP-side leftovers listed
+
 - [Team memory git repo](team-memory-git-repo.md) — memory now lives in committed project_memory/ repo (shared with team via git); write new memory here, not the hidden path
 - [Build scope plan](build-scope-plan.md) — homepage + Contact Us + About Us all DONE (2026-06-21) → STOP & wait for next instruction
 
