@@ -1,7 +1,7 @@
-# Project Memory — IndexWorld block theme (SHARED TEAM MEMORY)
+# Project Memory — IndexWorld block theme
 
-This folder is the **shared, version-controlled memory** for the project. It ships with the
-GitHub repo so **every teammate's Claude reads the same context**. Multiple people work here.
+This folder is the **version-controlled memory** for the project. It ships with the
+GitHub repo so **Claude reads the same context on every clone**.
 
 ## What's inside
 
@@ -17,20 +17,20 @@ project_memory/
 The `memory/` subfolder is the important one — `MEMORY.md` is the index, and each other
 `.md` file is one piece of project knowledge (build scope, conventions, how sections were ported, gotchas).
 
-## How the team uses it
+## How it's used
 
 1. **Pull the repo** → you automatically get all the memory in `project_memory/memory/`.
-2. **Your Claude reads it automatically** — the repo-root `CLAUDE.md` tells Claude that team
+2. **Your Claude reads it automatically** — the repo-root `CLAUDE.md` tells Claude that project
    memory lives in `./project_memory/memory/`, so it loads `MEMORY.md` at the start of a session.
    (If it ever doesn't, just say: *"the project memory is in ./project_memory/memory — read it."*)
 3. **When Claude learns something worth keeping**, it writes a new `<slug>.md` into
    `project_memory/memory/` and adds a one-line pointer to `MEMORY.md`.
-4. **Commit & push** those memory changes so the rest of the team gets them.
+4. **Commit & push** those memory changes to keep them in sync.
 
-## Rules (so the shared memory stays clean)
+## Rules (so the memory stays clean)
 
 - The committed `project_memory/memory/` is the **single source of truth**. Don't keep project
-  memory in the per-user hidden `~/.claude/...` path — that copy isn't shared with anyone.
+  memory in the per-user hidden `~/.claude/...` path — that copy isn't committed.
 - One fact per file. Update an existing file rather than creating a duplicate.
 - Always update `MEMORY.md` when you add/rename/remove a memory file.
 - Treat memory edits like code: review them in pull requests if you want quality control.

@@ -118,11 +118,11 @@ export to the others.
 
 See `memory/image-webp-media-library.md` for the full record (counts, the `_iw_src` mapping, the recipe).
 
-## Persistent memory (TEAM, in-repo)
+## Persistent memory (in-repo)
 
 Project context that isn't in the code lives in the committed folder **`./project_memory/memory/`**
-(indexed by `project_memory/memory/MEMORY.md`). This is the **shared team memory** — it ships with the
-repo so every teammate's Claude reads the same context. Multiple people work on this project.
+(indexed by `project_memory/memory/MEMORY.md`). It ships with the repo so Claude reads the same
+context on every clone.
 
 **Rules for memory:**
 - **At session start, read `project_memory/memory/MEMORY.md`** and check it for build scope, working
@@ -130,5 +130,5 @@ repo so every teammate's Claude reads the same context. Multiple people work on 
 - **When you learn something worth persisting, write it into `project_memory/memory/`** (a new
   `<slug>.md` file) and add a one-line pointer to `project_memory/memory/MEMORY.md`. Do NOT write
   project memory to the per-user hidden `~/.claude/projects/.../memory/` path — that copy is not shared.
-- The committed copy is the source of truth. After changing memory, **commit and push** so the team
-  gets it.
+- The committed copy is the source of truth. After changing memory, **commit and push** to keep it
+  in sync.

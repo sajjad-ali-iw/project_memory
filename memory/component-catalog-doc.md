@@ -1,14 +1,14 @@
 ---
 name: component-catalog-doc
-description: "The team-facing component catalog lives at theme docs/COMPONENTS.md — grouped by family, keep it updated as components are finalized"
+description: "The component catalog lives at theme docs/COMPONENTS.md — grouped by family, keep it updated as components are finalized"
 metadata: 
   node_type: memory
   type: project
   originSessionId: 1fbae924-d65f-4e27-baae-f096fb774b3d
 ---
 
-The component catalog is `wp-content/themes/indexworld-blocks/docs/COMPONENTS.md`. The site owner
-**shares this file with their team**, so keep it clean and readable.
+The component catalog is `wp-content/themes/indexworld-blocks/docs/COMPONENTS.md`. Keep it clean
+and readable.
 
 **Structure (decided 2026-06-22):**
 - **Group similar components together by family**, with sequential numbering — Heroes, Tabbed
@@ -33,5 +33,5 @@ each header if the owner wants them hidden (the `wp:pattern` slug ref keeps reso
 
 **WORKFLOW.md — DONE 2026-06-23.** `docs/WORKFLOW.md` written: mental model, build-a-new-page (2 routes),
 add/edit a component, validation (Windows Local PHP path), image pipeline, staging mirror trick,
-gotchas, env migration. Owner shares both docs with their team — keep them in sync. Related rule:
+gotchas, env migration. Keep both docs in sync. Related rule:
 [[always-supply-images-on-reuse]].

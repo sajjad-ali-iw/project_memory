@@ -2,7 +2,7 @@
 
 - [Overhaul 2026-07-02](overhaul-2026-07-02.md) — services tabs content + branded imagery set (OLD IMAGE FILENAMES DELETED — see file), About footprint section, 404→302 fallbacks for unbuilt industry pages, footer card hover animation; WP-side leftovers listed
 
-- [Team memory git repo](team-memory-git-repo.md) — memory now lives in committed project_memory/ repo (shared with team via git); write new memory here, not the hidden path
+- [Memory git repo](memory-git-repo.md) — memory now lives in committed project_memory/ repo (synced via git); write new memory here, not the hidden path
 - [Build scope plan](build-scope-plan.md) — homepage + Contact Us + About Us all DONE (2026-06-21) → STOP & wait for next instruction
 
 - [Working style: beginner pacing](working-style-beginner-pacing.md) — guide one tiny step at a time; pixel-perfect to staging
@@ -31,7 +31,7 @@
 - [FAQ accordion smooth](faq-accordion-smooth.md) — smooth single-open FAQ; <details> transition gotcha (animate via class on always-open details, not native toggle)
 - [Support page build](support-page-build.md) — /support/ (id 361) cloned pixel-perfect 2026-06-22; one .ix-sup* pattern; GOTCHA: big webp renders white in-page → use JPG
 - [Always supply images on reuse](always-supply-images-on-reuse.md) — RULE: reusing a component = fill EVERY image slot with a real page image (never blank/stale); Service Tabs needs 1 img/tab
-- [Component catalog doc](component-catalog-doc.md) — team-facing docs/COMPONENTS.md (#1–#17 + Section B page patterns/scaffolds DONE 2026-06-23) + docs/WORKFLOW.md (build/edit guide) DONE 2026-06-23; keep both in sync for the team
+- [Component catalog doc](component-catalog-doc.md) — docs/COMPONENTS.md (#1–#17 + Section B page patterns/scaffolds DONE 2026-06-23) + docs/WORKFLOW.md (build/edit guide) DONE 2026-06-23; keep both in sync
 - [Image WebP + Media Library](image-webp-media-library.md) — all 177 rasters→WebP q90 + 11 SVGs in LOCAL Media Library (tagged _iw_src; SVG support in functions.php); refs REPOINTED 2026-06-23 via render_block filter + industry-tabs.js source edit
 - [Image slot aspect ratios](image-slot-aspect-ratios.md) — all component image slots aspect-ratio + object-fit:cover locked (2026-06-23) so MCP images can't break layout; per-slot ratio table in docs/COMPONENTS.md §C
 - [MCP absolute-URL protocol gotcha](mcp-absolute-url-protocol-gotcha.md) — MCP pages bake https:// image URLs that fail on the http site → blank images look like "extra space"; fix = root-relative URLs (mechanical-industry carousel fixed 2026-06-23)
@@ -43,4 +43,5 @@
 - [No per-industry PHP patterns](no-per-industry-php-patterns.md) — RULE: never add a *-page.php pattern for a new industry; build from industry-starter scaffold as baked/MCP page content (chemical-page.php + furniture-page.php deleted 2026-06-25)
 - [Bake industry page recipe](bake-industry-page-recipe.md) — render a pattern → KSES-safe baked page content (carousel→<img>, do_blocks, normalize URLs, wp_update_post); + how to bootstrap WP from CLI on this Mac (mysqli.default_socket → Local's mysqld.sock)
 - [Multi-dev collaboration](multi-dev-collaboration.md) — Git + ChemiCloud plan decided 2026-06-24; docs/COLLABORATION.md in theme; MCP → prelive.indexworld.net (royal-mcp-prelive)
+- [Service pages responsive](service-pages-responsive.md) — the 4 service pages (/odoo-implementation, /odoo-audit, /odoo-customization, /odoo-migration) all use the `.ix-srv-*` family; fixed 2026-06-25: `.ix-srv-why__grid` never collapsed (2-col on mobile) + added 1000/860/560/400 tiers
 - [Blog bold-link color gotcha](blog-bold-link-color-gotcha.md) — bold/italic text inside blog links renders dark unless components.css L1583 (.ix-post__body a strong/b/em/i{color:inherit}) is deployed + LiteSpeed purged; never hand-edit post inline color; theme CSS deploy checklist (push origin/main → LiteSpeed Purge All)
