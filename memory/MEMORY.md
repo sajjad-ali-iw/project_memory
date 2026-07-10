@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Manufacturing Industry page](manufacturing-industry-page.md) — /manufacturing-industry/ (prelive id 805) live 2026-07-10, slug renamed from supply-chain-manufacturing via wp_update_seo_meta; old-slug 301 staged in functions.php $ix_canon, NOT yet deployed
 - [Overhaul 2026-07-02](overhaul-2026-07-02.md) — services tabs content + branded imagery set (OLD IMAGE FILENAMES DELETED — see file), About footprint section, 404→302 fallbacks for unbuilt industry pages, footer card hover animation; WP-side leftovers listed
 
 - [Memory git repo](memory-git-repo.md) — memory now lives in committed project_memory/ repo (synced via git); write new memory here, not the hidden path
