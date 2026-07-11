@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Oversized realistic imagery fix](oversized-realistic-imagery-fix.md) — 2026-07-11: July's raw AI PNGs (~100 MB) made homepage 23 MB → slot-spec WebPs deployed (442c642) + Library retag (new 956–973); homepage 2.2 MB; old PNGs untagged but still in Library; ALWAYS pipeline new imagery
 - [Manufacturing Industry page](manufacturing-industry-page.md) — /manufacturing-industry/ (prelive id 805) live 2026-07-10, slug renamed from supply-chain-manufacturing via wp_update_seo_meta; old-slug 301 staged in functions.php $ix_canon, NOT yet deployed
 - [Overhaul 2026-07-02](overhaul-2026-07-02.md) — services tabs content + branded imagery set (OLD IMAGE FILENAMES DELETED — see file), About footprint section, 404→302 fallbacks for unbuilt industry pages, footer card hover animation; WP-side leftovers listed
 
