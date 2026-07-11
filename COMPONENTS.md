@@ -53,7 +53,7 @@ together. Section B lists page-specific patterns that are intentionally *not* co
 
 #### 4. `feature-tabs` ✅  — **Feature Tabs**  (class `.ix-ftabs`, JS `assets/js/feature-tabs.js`)
 - **Use for:** anywhere with multiple grouped feature sets — **any number of tabs** (4, 5, 6+). Each tab = image + checklist of points.
-- **Layout:** vertical tabs (desktop, active = dark-navy pill) / dots + swipe (mobile). Scales as tabs are added.
+- **Layout:** vertical tabs (desktop, active = dark-navy pill) / dots + swipe (mobile) — mobile follows the house centered-peek recipe (full-bleed, 86vw slide + 14px gap, 7vw inset; JS steps in px). Scales as tabs are added.
 - **Image slots:** one image per tab.
 - **Distinct from `Service Tabs` (#5):** this one is *vertical* side-tabs + *icon-checklist* items.
 - **Naming:** finalized **"Feature Tabs"** (dropped the "(slider)").
