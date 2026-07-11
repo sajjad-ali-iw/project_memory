@@ -71,7 +71,7 @@ together. Section B lists page-specific patterns that are intentionally *not* co
 #### 6. `image-card-carousel` ✅  — **Image Card Carousel**  (class `.ix-iccar`, JS `assets/js/image-card-carousel.js`)
 - **Use for (multi-use):** use-cases / "proven results" showcase · service categories · industry highlights · portfolio / case-study teasers · product or feature galleries — any swipeable row of labeled image cards.
 - **Layout:** square image cards (photo + label) in a row; prev/next round arrows + dot pagination (active = dark pill).
-- **Hover (2026-07-11):** the per-card round ↗ arrow was removed (owner request); hovering a card 3D-flips it to a white face showing the card's text. The back-face text comes from the media anchor's `aria-label` (CSS `content:attr()`), so it works on baked pages too — **every `.ix-iccar__media` must carry an `aria-label`**. Keep `.ix-iccar__media` `overflow:visible` (overflow:hidden flattens the 3D and kills the flip); corner radius lives on the faces.
+- **Hover (2026-07-11):** the per-card round ↗ arrow was removed (owner request); hovering a card fades in a translucent `#ECE6FF` veil over the photo (image shows through dimmed) with the card's text centered on top. The text comes from the media anchor's `aria-label` (CSS `content:attr()`), so it works on baked pages too — **every `.ix-iccar__media` must carry an `aria-label`**. (A flip-to-white variant shipped earlier the same day was replaced by this at owner request.)
 - **Image slots:** one square photo per card (each page supplies its own set).
 - **Naming:** finalized **"Image Card Carousel"**.
 
