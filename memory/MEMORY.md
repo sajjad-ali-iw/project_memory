@@ -1,13 +1,14 @@
 # Memory Index
 
+- [Story carousels + Switch sections](story-carousels-and-switch-sections.md) — 2026-07-30: ix-re-life hover-narrative layer + ix-restack "Five Tools Today" section live on 4 industry pages; card recipe (short aria-label, story in data-desc, service-page links); integration-card restyle FROZEN (v1 live but owner dislikes, v2 drafted awaiting go); heading/copy changes gated by SEO Audits/SITE-CHANGELOG.md
+- [SHIP queue rules](ship-queue-rules.md) — 2026-07-30: no quotes in queue message (PS 5.1 commit breakage), prefer self-extinguishing finds (surviving finds double-apply on re-run), content entries overwrite whole files unchecked
+- [LiteSpeed purge + edge cache](litespeed-purge-and-edge-cache.md) — 2026-07-30: working purge = admin-bar node fetch (dashboard scraping 404s); ⚠️ CUTOVER-CRITICAL: a Jul-25 stale page copy survived days of Purge Alls on one network path (CDN edge suspected — confirm QUIC.cloud state + purge-to-edge before launch)
 - [Support page scope](support-page-scope-ongoing-support.md) — /support/ (id 361) sells ONGOING unlimited support & maintenance (monthly, post-go-live), NOT implementation or its cost; 2 FAQ items still mis-scoped to implementation; reordered explain→price + removed flat-vs-hourly section 2026-07-13
 - [Oversized realistic imagery fix](oversized-realistic-imagery-fix.md) — 2026-07-11: July's raw AI PNGs (~100 MB) made homepage 23 MB → slot-spec WebPs deployed (442c642) + Library retag (new 956–973); homepage 2.2 MB; old PNGs untagged but still in Library; ALWAYS pipeline new imagery
 - [Manufacturing Industry page](manufacturing-industry-page.md) — /manufacturing-industry/ (prelive id 805) live 2026-07-10, slug renamed from supply-chain-manufacturing via wp_update_seo_meta; old-slug 301 staged in functions.php $ix_canon, NOT yet deployed
 - [Overhaul 2026-07-02](overhaul-2026-07-02.md) — services tabs content + branded imagery set (OLD IMAGE FILENAMES DELETED — see file), About footprint section, 404→302 fallbacks for unbuilt industry pages, footer card hover animation; WP-side leftovers listed
-
 - [Memory git repo](memory-git-repo.md) — memory now lives in committed project_memory/ repo (synced via git); write new memory here, not the hidden path
 - [Build scope plan](build-scope-plan.md) — homepage + Contact Us + About Us all DONE (2026-06-21) → STOP & wait for next instruction
-
 - [Working style: beginner pacing](working-style-beginner-pacing.md) — guide one tiny step at a time; pixel-perfect to staging
 - [Fonts sourced from staging](fonts-sourced-from-staging.md) — happy font + AlmadenSans, fetched over HTTP from staging
 - [Logo variants](logo-variants.md) — dark logo live on white header; white logo reserved for colored home hero
@@ -48,9 +49,6 @@
 - [Multi-dev collaboration](multi-dev-collaboration.md) — Git + ChemiCloud plan decided 2026-06-24; docs/COLLABORATION.md in theme; MCP → prelive.indexworld.net (royal-mcp-prelive)
 - [Service pages responsive](service-pages-responsive.md) — the 4 service pages (/odoo-implementation, /odoo-audit, /odoo-customization, /odoo-migration) all use the `.ix-srv-*` family; fixed 2026-06-25: `.ix-srv-why__grid` never collapsed (2-col on mobile) + added 1000/860/560/400 tiers
 - [Blog bold-link color gotcha](blog-bold-link-color-gotcha.md) — bold/italic text inside blog links renders dark unless components.css L1583 (.ix-post__body a strong/b/em/i{color:inherit}) is deployed + LiteSpeed purged; never hand-edit post inline color; theme CSS deploy checklist (push origin/main → LiteSpeed Purge All)
-<<<<<<< HEAD
 - [Home trust deck + What-We-Do bento](home-trust-deck-and-wwd-bento.md) — new home sections since 2026-07-16, services tabs + trusted strip retired; RULE: adding a pattern file requires a theme Version bump (pattern-manifest cache); seeded /odoo-mcp-server/ page
-=======
 - [Office Furniture industry page](office-furniture-industry-page.md) — /office-furniture/ built on prelive 2026-07-09 (id 760), first Phase-4 industry vertical, content grounded in EOF + Skutchi Odoo tasks (anonymized); slug matches header menu; still need Furniture card on /industries/ grid
 - [Industry template gotcha](industry-template-gotcha.md) — RULE: every industry page MUST set _wp_page_template=industry via post-meta, or page.html renders WP post-title as duplicate H1 above the hero
->>>>>>> 520f6cd (Added Waqas Memory)
