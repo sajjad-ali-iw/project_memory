@@ -38,6 +38,9 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 1883 | epi-migration.webp | Team collaborating on financial data reconciliation | /erp-implementation/ phase "Data Migration" |
 | 1884 | epi-training.webp | One colleague walking another through training at a shared screen | /erp-implementation/ phase "Training & UAT" |
 | 1885 | epi-golive.webp | Two-person support desk, post-launch hypercare | /erp-implementation/ phase "Go-Live & Beyond" |
+| 1886 | ei-scan-warehouse.webp | Warehouse worker scanning inventory with handheld scanner + tablet | /erp-integration/ tabs "Payments, Banks & Accounting" AND "Shipping, 3PL & EDI" (same image, both tabs, per instruction) |
+| 1887 | ei-crm-growth.webp | Two people reviewing a rising growth chart on a tablet | /erp-integration/ tab "CRM & Marketing Attribution" |
+| 1888 | ei-data-dashboard.webp | Laptop showing a live analytics dashboard (active users, pageviews, top pages) | /erp-integration/ tab "Data, BI & AI" |
 
 Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `assets/images/how-it-works/` in `indexworld-blocks` (those patterns' tabs loops read a theme-relative filename, not a Library URL — see `patterns/erp-consultant.php` `$ec_steps` and `patterns/erp-implementation.php` `$ep_steps`).
 
@@ -46,6 +49,7 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 | Filename / slug | Depicts | Page → section |
 |---|---|---|
 | cust-understand.webp (id 1737) | Team analyzing requirements together before a customization | Originally /odoo-customization/ step "Understand the need"; **also now used on** /erp-consultant/ tab 1 Workflow Mapping |
+| industry-multi-channel-ecommerce.webp (id 1758) | Multi-channel ecommerce industry graphic | Already used /odoo-integration-services/ hero; **also now used on** /erp-integration/ tab "eCommerce & Marketplaces" (copied into theme as `ei-ecommerce-multichannel.webp`) — third-known placement, watch before reusing again |
 | industry-multi-channel-ecommerce.webp (id 1758) | Multi-channel ecommerce industry graphic | /odoo-integration-services/ hero |
 | configuration-and-quick-start (slug) | Config/quick-start scene | /odoo-integration-services/ step 5 Testing & validation |
 | how-04-build (slug) | Build-phase scene | /odoo-integration-services/ step 6 Go-live & cutover AND step 7 Support & monitoring (same image, two slots, per explicit instruction) |
@@ -69,5 +73,7 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 - Pexels photo 6803525 was almost picked for two different pages in the same session before being caught — always check this log first.
 - Very-low Pexels photo IDs (e.g. 7374) use an older URL scheme — `pexels-photo-<id>.jpeg` 404s as "Source image is unreachable"; fetch the photo page and read the real filename slug (e.g. `startup-photos.jpg`) from its og:image/src instead.
 - `pexels.com` is blocked by policy in the Browser pane (`navigate` fails outright) — approval previews use plain markdown links in chat instead, see [[image-approval-preview-method]].
+- Always view a candidate photo directly (download + `Read`, or the Artifact grid) before proposing it from a text description alone — a Pexels search description called a photo a "workflow strategy discussion" when the actual on-screen content was a "Workflow Wars" gamified-training mockup, and another called a stock-trading candlestick terminal a fit for "Data, BI & AI." Both looked right in text and wrong in the image (2026-08-07, /erp-integration/ tabs 4-5).
+- `/erp-integration/` served a stale cached page after this deploy (`X-LiteSpeed-Cache: hit`, `max-age=604800`); confirmed the real content was already correct via a `?nocache=<ts>` query-string bust. See [[litespeed-purge-and-edge-cache]] — programmatic purge needs an authenticated admin session this tool doesn't have.
 - `wp_upload_media_from_url` needs a public HTTPS source; the working recipe is theme-repo commit → push → poll the deployed `assets/images/...` URL for 200 → upload from that URL.
 - Pattern files using a `get_theme_file_uri('/assets/images/...')` + filename-in-array loop (`odoo-audit.php`, `erp-consultant.php`) don't automatically serve the Library copy — the Library upload is for the site's own image-management model (see project_memory `CLAUDE.md` "Image handling"), but what actually renders is the theme file. Baked DB pages (rescue, training, hire-dev) reference the Library URL directly instead.
