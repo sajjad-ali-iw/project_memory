@@ -32,8 +32,14 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 1877 | ec-build-handover.webp | Implementation build phase, standard-first, against approved blueprint | /erp-consultant/ tab 4 Build or Handover |
 | 1878 | ec-golive.webp | Role-based training on the configured system, ahead of a rehearsed cutover | /erp-consultant/ tab 5 Data, Training, Go-Live |
 | 1879 | ec-advisory.webp | Standing quarterly review, usage + automation roadmap | /erp-consultant/ tab 6 Ongoing Advisory |
+| 1880 | epi-discovery.webp | Team analyzing workflow data on a laptop during a discovery session | /erp-implementation/ phase "Discovery & Scoping" |
+| 1881 | epi-fitgap.webp | Coworkers reviewing data charts on laptops, grading requirements | /erp-implementation/ phase "Fit-Gap & Design" |
+| 1882 | epi-build.webp | Team doing a collaborative configuration review on laptops | /erp-implementation/ phase "Build & Configure" |
+| 1883 | epi-migration.webp | Team collaborating on financial data reconciliation | /erp-implementation/ phase "Data Migration" |
+| 1884 | epi-training.webp | One colleague walking another through training at a shared screen | /erp-implementation/ phase "Training & UAT" |
+| 1885 | epi-golive.webp | Two-person support desk, post-launch hypercare | /erp-implementation/ phase "Go-Live & Beyond" |
 
-Theme-repo copies of the 5 `ec-*` files also live at `assets/images/how-it-works/` in `indexworld-blocks` (that pattern's tabs loop reads a theme-relative filename, not a Library URL — see `patterns/erp-consultant.php` `$ec_steps`).
+Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `assets/images/how-it-works/` in `indexworld-blocks` (those patterns' tabs loops read a theme-relative filename, not a Library URL — see `patterns/erp-consultant.php` `$ec_steps` and `patterns/erp-implementation.php` `$ep_steps`).
 
 ## Photos — existing Library assets reused (not new uploads)
 
@@ -61,5 +67,7 @@ Theme-repo copies of the 5 `ec-*` files also live at `assets/images/how-it-works
 ## Gotchas
 
 - Pexels photo 6803525 was almost picked for two different pages in the same session before being caught — always check this log first.
+- Very-low Pexels photo IDs (e.g. 7374) use an older URL scheme — `pexels-photo-<id>.jpeg` 404s as "Source image is unreachable"; fetch the photo page and read the real filename slug (e.g. `startup-photos.jpg`) from its og:image/src instead.
+- `pexels.com` is blocked by policy in the Browser pane (`navigate` fails outright) — approval previews use plain markdown links in chat instead, see [[image-approval-preview-method]].
 - `wp_upload_media_from_url` needs a public HTTPS source; the working recipe is theme-repo commit → push → poll the deployed `assets/images/...` URL for 200 → upload from that URL.
 - Pattern files using a `get_theme_file_uri('/assets/images/...')` + filename-in-array loop (`odoo-audit.php`, `erp-consultant.php`) don't automatically serve the Library copy — the Library upload is for the site's own image-management model (see project_memory `CLAUDE.md` "Image handling"), but what actually renders is the theme file. Baked DB pages (rescue, training, hire-dev) reference the Library URL directly instead.
