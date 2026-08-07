@@ -1,5 +1,6 @@
 # Memory Index
 
+- [Image library log](image-library-log.md) — 2026-08-07: running table of photos/icons added or reused across service-page image-replacement passes (rescue, training, hire-dev, audit, erp-consultant, integration-services), by Library ID/filename/page/section — check before sourcing a new photo
 - [Story carousels + Switch sections](story-carousels-and-switch-sections.md) — 2026-07-30: ix-re-life hover-narrative layer + ix-restack "Five Tools Today" section live on 4 industry pages; card recipe (short aria-label, story in data-desc, service-page links); integration-card restyle FROZEN (v1 live but owner dislikes, v2 drafted awaiting go); heading/copy changes gated by SEO Audits/SITE-CHANGELOG.md
 - [SHIP queue rules](ship-queue-rules.md) — 2026-07-30: no quotes in queue message (PS 5.1 commit breakage), prefer self-extinguishing finds (surviving finds double-apply on re-run), content entries overwrite whole files unchecked
 - [LiteSpeed purge + edge cache](litespeed-purge-and-edge-cache.md) — 2026-07-30: working purge = admin-bar node fetch (dashboard scraping 404s); ⚠️ CUTOVER-CRITICAL: a Jul-25 stale page copy survived days of Purge Alls on one network path (CDN edge suspected — confirm QUIC.cloud state + purge-to-edge before launch)
