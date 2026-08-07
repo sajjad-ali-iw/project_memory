@@ -40,7 +40,14 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 1885 | epi-golive.webp | Two-person support desk, post-launch hypercare | /erp-implementation/ phase "Go-Live & Beyond" |
 | 1886 | ei-scan-warehouse.webp | Warehouse worker scanning inventory with handheld scanner + tablet | /erp-integration/ tabs "Payments, Banks & Accounting" AND "Shipping, 3PL & EDI" (same image, both tabs, per instruction) |
 | 1887 | ei-crm-growth.webp | Two people reviewing a rising growth chart on a tablet | /erp-integration/ tab "CRM & Marketing Attribution" |
-| 1888 | ei-data-dashboard.webp | Laptop showing a live analytics dashboard (active users, pageviews, top pages) | /erp-integration/ tab "Data, BI & AI" |
+| 1888 | ei-data-dashboard.webp | Laptop showing a live analytics dashboard (active users, pageviews, top pages) | /erp-integration/ tab "Data, BI & AI" — **REVERTED**, this whole "What our ERP integration services cover" batch (1886-1888 + the ei-ecommerce-multichannel reuse) was undone; see Gotchas |
+| 1889 | eint-audit.webp | Magnifying glass and calculator reviewing a chart | /erp-integration/ phase "Systems Audit" |
+| 1890 | eint-mapping.webp | Engineer with a laptop in a server room | /erp-integration/ phase "Data Mapping" (originally sourced for phase "Monitor & Support", moved earlier per instruction) |
+| 1891 | eint-method.webp | Writing "Use APIs" on a whiteboard | /erp-integration/ phase "Method Choice" |
+| 1892 | eint-reconcile.webp | Two people comparing printed reports side by side | /erp-integration/ phase "Test & Reconcile" |
+| 1893 | eint-monitor.webp | Two support agents with headsets at a screen | /erp-integration/ phase "Monitor & Support" |
+
+Phase "Build & Connect" on /erp-integration/ deliberately kept its original `how-04-build.jpg` — a candidate (Pexels #7988746, then #5385526) was sourced and shown but the user chose to leave it as-is.
 
 Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `assets/images/how-it-works/` in `indexworld-blocks` (those patterns' tabs loops read a theme-relative filename, not a Library URL — see `patterns/erp-consultant.php` `$ec_steps` and `patterns/erp-implementation.php` `$ep_steps`).
 
@@ -75,5 +82,6 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 - `pexels.com` is blocked by policy in the Browser pane (`navigate` fails outright) — approval previews use plain markdown links in chat instead, see [[image-approval-preview-method]].
 - Always view a candidate photo directly (download + `Read`, or the Artifact grid) before proposing it from a text description alone — a Pexels search description called a photo a "workflow strategy discussion" when the actual on-screen content was a "Workflow Wars" gamified-training mockup, and another called a stock-trading candlestick terminal a fit for "Data, BI & AI." Both looked right in text and wrong in the image (2026-08-07, /erp-integration/ tabs 4-5).
 - `/erp-integration/` served a stale cached page after this deploy (`X-LiteSpeed-Cache: hit`, `max-age=604800`); confirmed the real content was already correct via a `?nocache=<ts>` query-string bust. See [[litespeed-purge-and-edge-cache]] — programmatic purge needs an authenticated admin session this tool doesn't have.
+- **This page has TWO tab-like sections with similar "tab 2/3" phrasing** — the 5-tab `.ix-svc` grid ("What our ERP integration services cover", `$ei_tabs`) at line ~283, and the 6-phase `.ix-ftabs` vertical tabs ("How an Integration Project Runs", `$ei_steps`) at line ~346. A request to swap "tab 2" or "tab 3" images on `/erp-integration/` needs the heading confirmed before editing — the first attempt edited `$ei_tabs` when the user meant `$ei_steps`, had to be git-reverted (commit 8548a3b → revert 65dd561), and redone against the right array.
 - `wp_upload_media_from_url` needs a public HTTPS source; the working recipe is theme-repo commit → push → poll the deployed `assets/images/...` URL for 200 → upload from that URL.
 - Pattern files using a `get_theme_file_uri('/assets/images/...')` + filename-in-array loop (`odoo-audit.php`, `erp-consultant.php`) don't automatically serve the Library copy — the Library upload is for the site's own image-management model (see project_memory `CLAUDE.md` "Image handling"), but what actually renders is the theme file. Baked DB pages (rescue, training, hire-dev) reference the Library URL directly instead.
