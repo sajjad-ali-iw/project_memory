@@ -42,12 +42,13 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 1887 | ei-crm-growth.webp | Two people reviewing a rising growth chart on a tablet | /erp-integration/ tab "CRM & Marketing Attribution" |
 | 1888 | ei-data-dashboard.webp | Laptop showing a live analytics dashboard (active users, pageviews, top pages) | /erp-integration/ tab "Data, BI & AI" — **REVERTED**, this whole "What our ERP integration services cover" batch (1886-1888 + the ei-ecommerce-multichannel reuse) was undone; see Gotchas |
 | 1889 | eint-audit.webp | Magnifying glass and calculator reviewing a chart | /erp-integration/ phase "Systems Audit" |
-| 1890 | eint-mapping.webp | Engineer with a laptop in a server room | /erp-integration/ phase "Data Mapping" (originally sourced for phase "Monitor & Support", moved earlier per instruction) |
-| 1891 | eint-method.webp | Writing "Use APIs" on a whiteboard | /erp-integration/ phase "Method Choice" |
 | 1892 | eint-reconcile.webp | Two people comparing printed reports side by side | /erp-integration/ phase "Test & Reconcile" |
 | 1893 | eint-monitor.webp | Two support agents with headsets at a screen | /erp-integration/ phase "Monitor & Support" |
+| 1894 | eint-fields.webp | Hands with a calculator and notebook beside a laptop showing a data table | /erp-integration/ phase "Data Mapping" (final — superseded 1890 `eint-mapping.webp`, a server-room photo the user said "don't look good") |
+| 1895 | eint-flowchart.webp | Reviewing a flowchart on a whiteboard | /erp-integration/ phase "Method Choice" (final — superseded 1891 `eint-method.webp`, a "Use APIs" whiteboard shot) |
+| 1896 | eint-build.webp | Two developers coding side by side | /erp-integration/ phase "Build & Connect" (final — first real image for this phase; earlier kept as `how-04-build.jpg` by choice, then changed after the user asked for 2/3/4 to be redone) |
 
-Phase "Build & Connect" on /erp-integration/ deliberately kept its original `how-04-build.jpg` — a candidate (Pexels #7988746, then #5385526) was sourced and shown but the user chose to leave it as-is.
+1890 (`eint-mapping.webp`) and 1891 (`eint-method.webp`) are now unused/orphaned in the Library — superseded by 1894 and 1895 above, same as the 1841 "cables" precedent. Don't reuse.
 
 Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `assets/images/how-it-works/` in `indexworld-blocks` (those patterns' tabs loops read a theme-relative filename, not a Library URL — see `patterns/erp-consultant.php` `$ec_steps` and `patterns/erp-implementation.php` `$ep_steps`).
 
