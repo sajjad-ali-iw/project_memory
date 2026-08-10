@@ -43,6 +43,12 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 1888 | ei-data-dashboard.webp | Laptop showing a live analytics dashboard (active users, pageviews, top pages) | /erp-integration/ tab "Data, BI & AI" — **REVERTED**, this whole "What our ERP integration services cover" batch (1886-1888 + the ei-ecommerce-multichannel reuse) was undone; see Gotchas |
 | 1889 | eint-audit.webp | Magnifying glass and calculator reviewing a chart | /erp-integration/ phase "Systems Audit" |
 | 1892 | eint-reconcile.webp | Two people comparing printed reports side by side | /erp-integration/ phase "Test & Reconcile" |
+| 2206 | cost-implementation.webp | Reviewing a printed cost-estimate report (finance charts) | /erp-implementation/ "How much do ERP implementation services cost?" |
+| 2207 | cost-consultant.webp | Consultant and client going over a pricing proposal, calm two-person laptop discussion | /erp-consultant/ "How much does an ERP consultant cost?" |
+| 2208 | cost-integration.webp | Two hands pointing at itemized line items on an invoice/quote | /erp-integration/ "How much does ERP integration cost?" |
+| 2209 | cost-selection.webp | Presenter comparing pie-chart candidate data with a 4-person team | /erp-selection/ "How much does ERP selection consulting cost?" |
+
+All 4 previously shared one generic `odoo-impl-cost.jpg`/`.webp` (theme path `assets/images/odoo-impl/`) across the `.ix-iwhat` "How much does X cost?" section on all 4 Lane-A pages (erp-consultant, erp-implementation, erp-integration, erp-selection) — each now has its own image and file (`assets/images/odoo-impl/cost-*.webp`), matched to that page's specific pricing copy. The old shared file is still in the theme repo but no longer referenced by any of the 4.
 | 1893 | eint-monitor.webp | Two support agents with headsets at a screen | /erp-integration/ phase "Monitor & Support" |
 | 1894 | eint-fields.webp | Hands with a calculator and notebook beside a laptop showing a data table | /erp-integration/ phase "Data Mapping" (final — superseded 1890 `eint-mapping.webp`, a server-room photo the user said "don't look good") |
 | 1895 | eint-flowchart.webp | Reviewing a flowchart on a whiteboard | /erp-integration/ phase "Method Choice" (final — superseded 1891 `eint-method.webp`, a "Use APIs" whiteboard shot) |
