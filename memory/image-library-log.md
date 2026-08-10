@@ -54,6 +54,8 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2214 | upgrade-step6-cutover.webp | Two developers at dual monitors monitoring a deployment | /odoo-upgrade-services/ step 6 "Cutover" |
 | 2215 | upgrade-step7-support.webp | Support team with headsets and laptops working together | /odoo-upgrade-services/ step 7 "Support & maintenance" |
 | 2216 | upgrade-partner-accountable.webp | Senior consultant presenting a plan to the team | /odoo-upgrade-services/ "An Odoo Partner accountable for a safe upgrade" |
+| 2224 | upgrade-step3-plan.webp | Two people reviewing a migration plan checklist document, overhead view | /odoo-upgrade-services/ step 3 "Migration plan & backup" (final — superseded the erp-migration-servers.webp reuse, which was just server racks with no planning visual) |
+| 2225 | upgrade-step4-code.webp | Developer typing real code on a laptop at an office desk | /odoo-upgrade-services/ step 4 "Migrate & refactor code" (final — superseded the cust-development.webp reuse, whose AI-brain-hologram overlay read as an AI-marketing stock shot rather than real refactoring work) |
 
 These 3 previously shared the generic `menu-preview-services.jpg` hover-preview image in the desktop mega-menu (`parts/header.html`, `data-image` attribute on `.ix-item` links) — same file is still shared by 2 other menu items ("Odoo Integration", "Hire Odoo Developers") which weren't in scope for this pass.
 
