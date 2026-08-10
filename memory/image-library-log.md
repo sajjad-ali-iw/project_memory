@@ -50,6 +50,10 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2210 | menu-preview-support.webp | Support agent with a headset helping a client | Mega-menu hover preview for "Odoo Support Plans" (`parts/header.html`) |
 | 2211 | menu-preview-upgrade.webp | Developer at dual monitors with code on screen | Mega-menu hover preview for "Upgrade Odoo Version" — closest available fit; no real photo literally depicts a software version upgrade (phone-OS-update screenshots were rejected as wrong-platform/branded) |
 | 2212 | menu-preview-partner.webp | Two professionals shaking hands with a growth chart on screen | Mega-menu hover preview for "Odoo Partner" |
+| 2213 | upgrade-step1-audit.webp | IT professional reviewing a report on screen | /odoo-upgrade-services/ step 1 "Audit current version" |
+| 2214 | upgrade-step6-cutover.webp | Two developers at dual monitors monitoring a deployment | /odoo-upgrade-services/ step 6 "Cutover" |
+| 2215 | upgrade-step7-support.webp | Support team with headsets and laptops working together | /odoo-upgrade-services/ step 7 "Support & maintenance" |
+| 2216 | upgrade-partner-accountable.webp | Senior consultant presenting a plan to the team | /odoo-upgrade-services/ "An Odoo Partner accountable for a safe upgrade" |
 
 These 3 previously shared the generic `menu-preview-services.jpg` hover-preview image in the desktop mega-menu (`parts/header.html`, `data-image` attribute on `.ix-item` links) — same file is still shared by 2 other menu items ("Odoo Integration", "Hire Odoo Developers") which weren't in scope for this pass.
 
@@ -78,6 +82,9 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 | supply-chain-manufacturing-go-live (slug) | Go-live floor scene | /odoo-audit/ step "Implement & support" → theme file `audit-implement-support.jpg` |
 | real-estate-go-live (slug) | Go-live scene | /odoo-audit/ closing image ("An audit that ends in action") |
 | migrate-from-legacy-erp / em-legacy.webp (id 1717) | Team at computers on an enterprise system | /odoo-rescue/ step 2 Stabilize — swapped in after 1841 was rejected |
+| epi-fitgap.webp (id 1881) | Coworkers reviewing data charts on laptops | Also /odoo-upgrade-services/ step 2 "Compatibility analysis" |
+| erp-migration-servers.webp (id 1705) | Row of tower servers | Also /odoo-upgrade-services/ step 3 "Migration plan & backup" |
+| cust-development.webp (id 1738) | Developer laptop with code, glowing AI-brain hologram overlay | Also /odoo-upgrade-services/ step 4 "Migrate & refactor code" — the AI-hologram styling is a slight mismatch (this is about refactoring, not AI) but was approved as-is |
 
 ## Icon sets redesigned (no generated art — sourced from the site's existing icon library or Lucide)
 
@@ -93,6 +100,7 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 - Very-low Pexels photo IDs (e.g. 7374) use an older URL scheme — `pexels-photo-<id>.jpeg` 404s as "Source image is unreachable"; fetch the photo page and read the real filename slug (e.g. `startup-photos.jpg`) from its og:image/src instead.
 - `pexels.com` is blocked by policy in the Browser pane (`navigate` fails outright) — approval previews use plain markdown links in chat instead, see [[image-approval-preview-method]].
 - Always view a candidate photo directly (download + `Read`, or the Artifact grid) before proposing it from a text description alone — a Pexels search description called a photo a "workflow strategy discussion" when the actual on-screen content was a "Workflow Wars" gamified-training mockup, and another called a stock-trading candlestick terminal a fit for "Data, BI & AI." Both looked right in text and wrong in the image (2026-08-07, /erp-integration/ tabs 4-5).
+- `mcp__royal-mcp-prelive-indexworld__wp_replace_in_page` (and `_in_post`) does a literal find/replace on a page/post's content server-side — no need to fetch, PHP-decode, and resend the whole body for a baked-page image swap. Dry-run with `expected_count` first to confirm an exact single match, then apply. Much faster than the earlier PHP-reconstruction workflow for small, targeted edits (used successfully on /odoo-upgrade-services/, id 715).
 - `/erp-integration/` served a stale cached page after this deploy (`X-LiteSpeed-Cache: hit`, `max-age=604800`); confirmed the real content was already correct via a `?nocache=<ts>` query-string bust. See [[litespeed-purge-and-edge-cache]] — programmatic purge needs an authenticated admin session this tool doesn't have.
 - **This page has TWO tab-like sections with similar "tab 2/3" phrasing** — the 5-tab `.ix-svc` grid ("What our ERP integration services cover", `$ei_tabs`) at line ~283, and the 6-phase `.ix-ftabs` vertical tabs ("How an Integration Project Runs", `$ei_steps`) at line ~346. A request to swap "tab 2" or "tab 3" images on `/erp-integration/` needs the heading confirmed before editing — the first attempt edited `$ei_tabs` when the user meant `$ei_steps`, had to be git-reverted (commit 8548a3b → revert 65dd561), and redone against the right array.
 - `wp_upload_media_from_url` needs a public HTTPS source; the working recipe is theme-repo commit → push → poll the deployed `assets/images/...` URL for 200 → upload from that URL.
