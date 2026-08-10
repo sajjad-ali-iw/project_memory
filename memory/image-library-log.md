@@ -47,6 +47,11 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2207 | cost-consultant.webp | Consultant and client going over a pricing proposal, calm two-person laptop discussion | /erp-consultant/ "How much does an ERP consultant cost?" |
 | 2208 | cost-integration.webp | Two hands pointing at itemized line items on an invoice/quote | /erp-integration/ "How much does ERP integration cost?" |
 | 2209 | cost-selection.webp | Presenter comparing pie-chart candidate data with a 4-person team | /erp-selection/ "How much does ERP selection consulting cost?" |
+| 2210 | menu-preview-support.webp | Support agent with a headset helping a client | Mega-menu hover preview for "Odoo Support Plans" (`parts/header.html`) |
+| 2211 | menu-preview-upgrade.webp | Developer at dual monitors with code on screen | Mega-menu hover preview for "Upgrade Odoo Version" — closest available fit; no real photo literally depicts a software version upgrade (phone-OS-update screenshots were rejected as wrong-platform/branded) |
+| 2212 | menu-preview-partner.webp | Two professionals shaking hands with a growth chart on screen | Mega-menu hover preview for "Odoo Partner" |
+
+These 3 previously shared the generic `menu-preview-services.jpg` hover-preview image in the desktop mega-menu (`parts/header.html`, `data-image` attribute on `.ix-item` links) — same file is still shared by 2 other menu items ("Odoo Integration", "Hire Odoo Developers") which weren't in scope for this pass.
 
 All 4 previously shared one generic `odoo-impl-cost.jpg`/`.webp` (theme path `assets/images/odoo-impl/`) across the `.ix-iwhat` "How much does X cost?" section on all 4 Lane-A pages (erp-consultant, erp-implementation, erp-integration, erp-selection) — each now has its own image and file (`assets/images/odoo-impl/cost-*.webp`), matched to that page's specific pricing copy. The old shared file is still in the theme repo but no longer referenced by any of the 4.
 | 1893 | eint-monitor.webp | Two support agents with headsets at a screen | /erp-integration/ phase "Monitor & Support" |
