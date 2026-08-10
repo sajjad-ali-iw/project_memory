@@ -56,6 +56,8 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2216 | upgrade-partner-accountable.webp | Senior consultant presenting a plan to the team | /odoo-upgrade-services/ "An Odoo Partner accountable for a safe upgrade" |
 | — | partner-hero.webp (theme file, not Library-uploaded) | Four-person tech team reviewing work at a screen | /odoo-partner/ hero (was a badge/logo graphic, `$p_logo`) |
 | — | partner-why.webp (theme file, not Library-uploaded) | Senior consultant guiding two colleagues at their desks | /odoo-partner/ "Why choose Index World as your Odoo partner?" (was reusing one of the 3 credibility badge images) |
+| 2232 | odoo-accounting-hero.webp | Overhead view of hands reviewing financial documents with a calculator | /odoo-accounting/ hero (was reusing the generic odoo-impl-hero.jpg shared with other pages) |
+| 2233 | odoo-accounting-why.webp | Two colleagues reviewing a financial report together at a table | /odoo-accounting/ "An accounting bench your accountant can audit" (was reusing the generic odoo-impl-why.jpg) |
 | 2224 | upgrade-step3-plan.webp | Two people reviewing a migration plan checklist document, overhead view | /odoo-upgrade-services/ step 3 "Migration plan & backup" (final — superseded the erp-migration-servers.webp reuse, which was just server racks with no planning visual) |
 | 2225 | upgrade-step4-code.webp | Developer typing real code on a laptop at an office desk | /odoo-upgrade-services/ step 4 "Migrate & refactor code" (final — superseded the cust-development.webp reuse, whose AI-brain-hologram overlay read as an AI-marketing stock shot rather than real refactoring work) |
 
@@ -98,6 +100,7 @@ Theme-repo copies of the 5 `ec-*` files and the 6 `epi-*` files also live at `as
 | /odoo-rescue/ (baked page, id 1080) | "Sound familiar?" checklist | Tick boxes replaced with context-matched icons (negative/neutral per line); "Nobody trusts the numbers" icon revised again after a rejected first pass — exact SVGs live in the page content, fetch via `wp_get_page(1080)` if reworking |
 | /odoo-training-services/ (baked page, id 678) | "Training built for every role on your team" | Role icons checked against copy; Accountant / Sales Manager / HR Manager redone once, rest approved as-is — exact SVGs via `wp_get_page(678)` |
 | /odoo-partner/ | `$p_ic` in `patterns/odoo-partner.php`, "Simple, effective Odoo services" grid | `migr` (Odoo Migration) and `hire` (Hire Odoo Developer) replaced with Lucide `database-backup` and `user-plus` — both keys were previously the same generic arrow/person icons reused sitewide (header mega-menu, etc.); this edit only touches this page's own `$p_ic` array, not the shared header.html SVGs |
+| /odoo-accounting/ (baked page, id 1120) | "Where DIY setups go wrong, and what closes each gap" | All 6 icons replaced with existing site icons only (no generation): `layers` (odoo-audit.php, duplication badge) for "chart of accounts copied", `tdown` (erp-consultant.php) for "costing method left on default", `eqnot` (erp-consultant.php, not-equal) for "bank feeds never reconciled", `shx` (erp-consultant.php, broken shield) for "sales tax on defaults", `db` (odoo-audit.php, warning-triangle badge) for "stock and ledger disagree", `calx` (erp-consultant.php, calendar-X) for "month-end never closes" |
 
 ## Gotchas
 
