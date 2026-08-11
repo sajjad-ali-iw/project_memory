@@ -77,6 +77,12 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2283 | payroll-step5-payslip.webp | Overhead view of hands reviewing a financial document | /payroll-services/ step 5 "Go live on payslips, taxes, and filings" |
 | 2284 | payroll-step6-ledger.webp | Hands with a calculator and documents posting entries at month-end | /payroll-services/ step 6 "Hand the month to the books" |
 | 2285 | payroll-why-cpa-team.webp | Small accounting team working together with calculators and laptops | /payroll-services/ "Payroll checked the way accountants check it" |
+| 2301 | cfo-hero.webp | Person analyzing financial data on screens, making notes | /fractional-cfo/ hero (was reusing the generic `odoo-impl-hero.jpg` shared with other pages) |
+| 2302 | cfo-step1-close.webp | Business professional examining financial documents | /fractional-cfo/ process step 1 "Data access and close review" |
+| 2303 | cfo-step2-forecast.webp | Cash, documents, and calculator symbolizing financial analysis and budgeting | /fractional-cfo/ process step 2 "The forecast gets built" |
+| 2304 | cfo-step3-cadence.webp | Two professionals collaborating over a paper and calendar | /fractional-cfo/ process step 3 "Reporting cadence set" |
+| 2305 | cfo-step4-monthly.webp | Three professionals discussing financial charts and graphs | /fractional-cfo/ process step 4 "The monthly rhythm" |
+| 2306 | cfo-why-cpa.webp | Three businessmen discussing financial data in a modern office | /fractional-cfo/ "Led by a CPA, backed by an in-house team" (was reusing the generic `odoo-impl-why.jpg` shared with other pages) |
 
 /payroll-services/ hero reuses `menu-preview-payroll.webp` (id 2270, already in the Library from the nav-preview pass) instead of a new upload — was previously the generic `odoo-impl-hero.jpg` shared with other pages.
 
