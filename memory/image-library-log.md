@@ -83,6 +83,13 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2304 | cfo-step3-cadence.webp | Two professionals collaborating over a paper and calendar | /fractional-cfo/ process step 3 "Reporting cadence set" |
 | 2305 | cfo-step4-monthly.webp | Three professionals discussing financial charts and graphs | /fractional-cfo/ process step 4 "The monthly rhythm" |
 | 2306 | cfo-why-cpa.webp | Three businessmen discussing financial data in a modern office | /fractional-cfo/ "Led by a CPA, backed by an in-house team" (was reusing the generic `odoo-impl-why.jpg` shared with other pages) |
+| 2319 | qb-hero.webp | Two colleagues at a laptop with a document tray, reviewing a file together | /quickbooks-services/ hero (was reusing the generic `odoo-impl-hero.jpg` shared with other pages) |
+| 2320 | qb-step1-diagnostic.webp | Magnifying glass over a printed bank statement ("Account Activity", "Ending Balance") | /quickbooks-services/ process step 1 "Diagnostic file review" (first candidate was two people smiling over generic pamphlets, not a financial document — caught on self-check and replaced) |
+| 2321 | qb-step2-reconcile.webp | Hands using a calculator beside an open laptop | /quickbooks-services/ process step 2 "Reconcile every account" |
+| 2322 | qb-step3-recode.webp | Hand writing on a chart/worksheet beside a calculator | /quickbooks-services/ process step 3 "Fix categorization and duplicates" |
+| 2323 | qb-step4-undeposited.webp | Hands sorting receipts and papers with a calculator | /quickbooks-services/ process step 4 "Rebuild undeposited funds and liabilities" |
+| 2324 | qb-step5-taxready.webp | Two colleagues reviewing a bound report together, one pointing at the page | /quickbooks-services/ process step 5 "Tax-ready close" |
+| 2325 | qb-why-cpa-team.webp | Small accounting team at laptops with a senior figure overseeing | /quickbooks-services/ "Led by a CPA, staffed like a practice" (was reusing the generic `odoo-impl-why.jpg` shared with other pages) |
 
 /payroll-services/ hero reuses `menu-preview-payroll.webp` (id 2270, already in the Library from the nav-preview pass) instead of a new upload — was previously the generic `odoo-impl-hero.jpg` shared with other pages.
 
