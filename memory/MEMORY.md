@@ -1,6 +1,7 @@
 # Memory Index
 
-- [Image approval preview method](image-approval-preview-method.md) — 2026-08-07: use Browser-pane direct navigation to Pexels URLs for approval previews (speed), not the Artifact base64-grid method, unless user asks for side-by-side
+- [Image/icon workflow](image-icon-workflow.md) — THE current end-to-end rules for images/icons-only sessions: scope, sourcing, SendUserFile approval, deploy pipeline, record-keeping. Read this first for any image/icon task.
+- [Image approval preview method](image-approval-preview-method.md) — 2026-08-07: history of how the approval-preview method evolved (Browser-pane → markdown links → SendUserFile); superseded by image-icon-workflow.md for current practice
 - [Image library log](image-library-log.md) — 2026-08-07: running table of photos/icons added or reused across service-page image-replacement passes (rescue, training, hire-dev, audit, erp-consultant, integration-services), by Library ID/filename/page/section — check before sourcing a new photo
 - [Story carousels + Switch sections](story-carousels-and-switch-sections.md) — 2026-07-30: ix-re-life hover-narrative layer + ix-restack "Five Tools Today" section live on 4 industry pages; card recipe (short aria-label, story in data-desc, service-page links); integration-card restyle FROZEN (v1 live but owner dislikes, v2 drafted awaiting go); heading/copy changes gated by SEO Audits/SITE-CHANGELOG.md
 - [SHIP queue rules](ship-queue-rules.md) — 2026-07-30: no quotes in queue message (PS 5.1 commit breakage), prefer self-extinguishing finds (surviving finds double-apply on re-run), content entries overwrite whole files unchecked
