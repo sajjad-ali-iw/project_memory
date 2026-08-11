@@ -50,6 +50,10 @@ Started 2026-08-07 during a multi-page image-replacement pass across service pag
 | 2210 | menu-preview-support.webp | Support agent with a headset helping a client | Mega-menu hover preview for "Odoo Support Plans" (`parts/header.html`) |
 | 2211 | menu-preview-upgrade.webp | Developer at dual monitors with code on screen | Mega-menu hover preview for "Upgrade Odoo Version" — closest available fit; no real photo literally depicts a software version upgrade (phone-OS-update screenshots were rejected as wrong-platform/branded) |
 | 2212 | menu-preview-partner.webp | Two professionals shaking hands with a growth chart on screen | Mega-menu hover preview for "Odoo Partner" |
+| 2270 | menu-preview-payroll.webp | Hands counting cash with payroll spreadsheets and a calculator | Mega-menu hover preview for "Payroll Management" |
+| 2271 | menu-preview-quickbooks.webp | Hands typing on a laptop with accounting software and binders | Mega-menu hover preview for "QuickBooks Services" |
+
+"Bookkeeping" mega-menu preview reuses `bookkeeping-step4-monthly.webp` (id 2245, already in the Library from the bookkeeping-page pass) rather than a new upload — all 3 previously shared the generic `staging/3x-4.jpg`.
 | 2213 | upgrade-step1-audit.webp | IT professional reviewing a report on screen | /odoo-upgrade-services/ step 1 "Audit current version" |
 | 2214 | upgrade-step6-cutover.webp | Two developers at dual monitors monitoring a deployment | /odoo-upgrade-services/ step 6 "Cutover" |
 | 2215 | upgrade-step7-support.webp | Support team with headsets and laptops working together | /odoo-upgrade-services/ step 7 "Support & maintenance" |
