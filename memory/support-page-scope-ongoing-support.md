@@ -15,11 +15,15 @@ support: unlimited help, maintenance/bug-fixing, upgrades, hosting, hypercare �
 "how long/how much to implement Odoo". Implementation lives on `/odoo-implementation/`
 (id 362) and is cross-linked from the hero, that's fine.
 
-**Known mismatch to fix:** two FAQ items in `support-page.php` are mis-scoped for this
-page — "What does an Odoo implementation with Index World include?" and "How long does a
-typical Odoo implementation take?" — they answer implementation, not support. Reword to
-support-focused questions (e.g. what's covered by a support plan, response times,
-onboarding onto a plan).
+**FAQ scope (FIXED 2026-08-05):** the two mis-scoped FAQ items were reworded to
+support-focused ones ("What does an Index World support plan include?" / "How quickly do
+you respond to support requests?").
+
+**IMPORTANT — the 2026-07-13 layout below was a DECISION that was never actually built
+until 2026-08-05.** Before then the local/prelive `support-page.php` was still the old
+~2026-07-08 layout (old `.ix-sup-hero`, plans near top, `.ix-sup-cmp` comparison present,
+4 alternating `.ix-sup-feat` blocks). The full redesign + everything below was built and
+shipped on 2026-08-05 (commit "Support page: full build …").
 
 **Layout history (2026-07-13):** reordered to explain-then-price
 (hero → support types → services grid → why → plans → FAQ → CTA); the
@@ -45,3 +49,35 @@ block skips that → content stretches full-width and looks broken. Fix: emit it
 `wp:group` block at pattern top level (close the surrounding `wp:html` first, reopen after)
 — mirror `patterns/services.php` exactly. Same applies to any `.ix-svc`/`.ix-services`
 reuse.
+
+**2026-08-05 BUILD & SHIP (full redesign landed + deployed to prelive):**
+- Services tabs `$ix_feats` order: **Client portal (tab 1, default) / Expert help / Team
+  training / 500+ apps**. `$ft` slots: [img, title, desc, tabLabel, img2?, bullets?]. desc
+  supports multiple paragraphs split on `||`. Panels with `$ft[5]` (bullets) hide the strong
+  title line.
+- **Client portal tab** = a *cluster* collage in the media cell (`.ix-svc__media--cluster`,
+  scoped `> img:nth-of-type(1|2)` so chip logos aren't hit): Gantt (`feat-portal.webp`) base +
+  dashboard (`feat-dashboard.webp`) overlapping lower-right + a "Also in your portal" chip
+  (`.ix-svc__portalx`) with real **Google Drive + Zoom** logos (`drive.svg`/`zoom.svg`). Text
+  column has a purple-dot bullet list (`.ix-svc__ul`): live tracking & planning / Zoom AI
+  transcripts / auto ERP docs w/ diagrams / module-specific training material / dedicated secure
+  Google Drive / team access.
+- **500+ apps tab** = a 12-tile grid (`.ix-appgrid`, branch on `'500+ apps' === $ft[3]`) of real
+  Odoo app icons (`assets/images/support/apps/*.webp`, sourced from Odoo GitHub via jsDelivr).
+  `.ix-svc__media--apps .ix-appgrid__ic{width:34px}` needed to beat base `.ix-svc__media img`.
+- **Support types** section rebuilt as the `.ix-srv-deliver--wx` "why an expert" card design
+  (`$ix_types`, 6 cards, checklist bullets). Order: Functional / Technical / Server&Hosting /
+  Role-based User Trainings / Upgrade / Monthly Audit&Health Report.
+- **Plans**: dark gradient band (`#2a2160→#171236`), CTA "Start Now"→`/contact-us/` (featured
+  "Free Demo"→booking), "Monthly Odoo Audit"→**"Annual Odoo Audit"** (linked `/odoo-audit/`),
+  "500+ apps"/"Unlimited training and support"/"Any number of Odoo users"; Custom(Hero) adds
+  version migration, role-specific e-learning, AI automations, unlimited new developments,
+  Direct Print (all plans).
+- **Stats strip** `.ix-sup-stats` after hero (Official / Unlimited tickets / $0 / Anytime).
+- **Nav relabel** (`parts/header.html`): top-level & mobile "Pricing"→**"Support Plans"**;
+  mega-menu item + drawer sub-item → **"Odoo Support Plans"**. "Get support" CTA left as-is.
+- **Deploy**: theme pushed to GitHub `main` (prelive auto-pulls same repo). **Images →
+  prelive Media Library** (owner convention): 14 rasters uploaded + tagged `_iw_src` (ids
+  1793 feat-portal, 1794 feat-dashboard, 1795–1806 the 12 app icons). **SVGs (drive/zoom)
+  can't be Library-uploaded — prelive REST rejects `.svg`** — so they stay theme-served
+  (render fine via fallback). Verified prelive `/support/` serves the Library copies.

@@ -9,7 +9,32 @@ metadata:
 
 Mobile responsiveness QA pass (2026-06-21).
 
-**TOOLING LIMIT (important):** the Claude-in-Chrome browser is pinned to a ~1440px desktop viewport — `resize_window` resizes the OS window but the page still renders/screenshots at desktop width (full nav stays inline). So I **cannot take real mobile screenshots**. The Preview MCP needs a dev server from launch.json and can't point at the Local WP host. → Mobile visual verification must be done by the USER (real phone or Chrome DevTools device mode). Don't claim mobile visual QA was done from desktop.
+**✅ TOOLING LIMIT LIFTED (2026-08-14) — real mobile screenshots ARE possible now.** Use the
+**in-app Browser pane** (`mcp__Claude_Browser__*`), which is a DIFFERENT tool from the
+Claude-in-Chrome extension the old limit was about. Recipe:
+
+```
+mcp__Claude_Browser__preview_start   { url: "http://indexworld-revamp.local/" }
+mcp__Claude_Browser__resize_window   { preset: "mobile" }      # 375x812
+mcp__Claude_Browser__navigate        { url: "http://indexworld-revamp.local/<page>/" }
+mcp__Claude_Browser__computer        { action: "screenshot" }
+```
+
+Verified 2026-08-14: `innerWidth` really is **375**, `devicePixelRatio` 2, UA is Android/Pixel 8,
+5 touch points, and `.ix-burger` computes `display:flex` — i.e. the page genuinely renders at phone
+width, not a scaled desktop. `preset:"tablet"` (768) and explicit `{width,height}` also work.
+Note `preview_start` may report `navOk:false` while still opening the tab — just call `navigate`
+after. Keep using **http://** (https hits the untrusted-cert interstitial).
+
+→ **Do the mobile QA yourself; don't defer it to the owner.** Several memories still say
+"USER must verify on a phone" ([[service-pages-responsive]], [[support-page-build]],
+[[hero-rotator-two-line-lock]], [[image-webp-media-library]]) — that caveat is obsolete, though
+their FINDINGS remain valid. A real device is still worth a final sanity pass before go-live.
+
+**Programmatic overflow sweep** (faster + more reliable than eyeballing screenshots): walk every
+element, flag any whose rect escapes `[0, innerWidth]` *and* has no `overflow-x` clipping ancestor.
+Known false positive: `.ix-cform__hp` (contact-form honeypot, parked at `left:-9999px`) — expected,
+not a bug.
 
 **DESKTOP visual verify DOES work — over HTTP (2026-06-23).** The controlled Chrome can screenshot local pages if you navigate to **`http://indexworld-revamp.local/...`** (the site's canonical scheme; `siteurl` is http). Navigating to **`https://`** hits a "Privacy error" cert interstitial that CANNOT be scripted/bypassed (`Cannot attach to this target`) — so always use the **http://** URL for Claude-in-Chrome screenshots. This unblocks self-verifying desktop layout/CSS changes (used to confirm the single-post sidebar redesign).
 
