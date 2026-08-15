@@ -33,18 +33,32 @@ your business" (`ix-iwhat ix-iwhy` + `ix-whyx` icon cards) → case-study carous
   delivery / Upgrade · Safe, documented code / 1 month · No-obligation start.
 - Removed earlier: hero chips, the "Tools & Frameworks" section, a deliver-section tagline.
 
-## Process step imagery (replaced 2026-08-15, all Media Library WebP)
+## Process step imagery — ALL SIX replaced 2026-08-15 (Media Library WebP, ~203 KB total)
 
 | Step | Image | Source |
 |---|---|---|
-| 1 Understand the need | `cust-understand-brains.webp` (34 KB) | generated "two bright brains connecting" illustration |
-| 2 BPMN process mapping | `cust-bpmn-mapping.webp` (24 KB) | generated bright ERP BPMN diagram w/ Sales/Inventory/Finance swimlanes |
-| 3 Design & approval | `cust-design-approval-flow.webp` (13 KB) | hand-authored bright SVG (documented flow + green approval check), rasterized via Chrome headless |
-| 4–6 | unchanged (`cust-development`, `how-05-deploy`, `how-07-optimize`) | |
+| 1 Understand the need | `cust-understand-brains.webp` (34 KB) | generated — two bright brains connecting |
+| 2 BPMN process mapping | `cust-bpmn-mapping.webp` (24 KB) | generated — ERP BPMN w/ Sales/Inventory/Finance swimlanes |
+| 3 Design & approval | `cust-design-approved.webp` (33 KB) | generated — flow diagram + signature + APPROVED stamp |
+| 4 Development & testing | `cust-development-testing.webp` (23 KB) | generated — code editor + passing test-results panel |
+| 5 Deployment & data | `cust-deployment-data.webp` (52 KB) | generated — server → data records → live dashboard + permissions shield |
+| 6 Support & maintenance | `cust-support-maintenance.webp` (37 KB) | generated — support agent, ticket resolved, upgrade-safe wrench+shield |
 
-Owner's steer on imagery for this page: **bright, vibrant, colourful** illustrations rather than muted
-stock photos. Two photo candidates for step 3 (blueprints review, pen-signing-document) were sourced
-and rejected in favour of the bright vector.
+### Imagery direction for this page (owner's accumulated steer)
+
+- **Bright, vibrant, colourful illustrations** — not muted stock photos. Photo candidates for step 3
+  (blueprint review, pen-signing-a-document) were sourced and **rejected** in favour of illustration.
+- **No purple** in the newer images (steps 3, 5, 6 use teal/turquoise/coral/orange/yellow/green).
+  Asked for explicitly — *"recreate without purple"* — even though the brand primary is `#50269E`.
+  Steps 1/2/4 predate that instruction and still contain purple; leave unless asked.
+- **High contrast** matters to the owner; a low-contrast/minimal-colour variant was tried and
+  rejected in the same breath (*"bright colors"*).
+- All six were generated via the Higgsfield MCP (`nano_banana_pro`, aspect 3:2, 2 variants each shown
+  for approval via `SendUserFile`), then uploaded through the weserv proxy for URL-side WebP+resize —
+  see [[fast-image-upload-method]].
+
+**Gotcha:** the first weserv-proxied upload of a freshly generated image **timed out** (cold cache).
+Curl the weserv URL once to warm it, then re-issue `wp_upload_media_from_url` — it succeeds.
 
 ## Open / next
 
