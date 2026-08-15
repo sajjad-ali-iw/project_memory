@@ -48,9 +48,11 @@ your business" (`ix-iwhat ix-iwhy` + `ix-whyx` icon cards) → case-study carous
 
 - **Bright, vibrant, colourful illustrations** — not muted stock photos. Photo candidates for step 3
   (blueprint review, pen-signing-a-document) were sourced and **rejected** in favour of illustration.
-- **No purple** in the newer images (steps 3, 5, 6 use teal/turquoise/coral/orange/yellow/green).
-  Asked for explicitly — *"recreate without purple"* — even though the brand primary is `#50269E`.
-  Steps 1/2/4 predate that instruction and still contain purple; leave unless asked.
+- **Purple is FINE** — it is the brand primary (`#50269E`). During generation the owner said
+  *"recreate without purple"*, but immediately clarified afterwards: *"i mistakenly told you about
+  purple — purple is fine"*; the real objection was to a **solid purple BACKGROUND** filling the
+  frame, not to purple as a colour. So: use purple freely in elements; avoid a heavy purple
+  background wash. Steps 1/2/4 contain purple and are staying as they are.
 - **High contrast** matters to the owner; a low-contrast/minimal-colour variant was tried and
   rejected in the same breath (*"bright colors"*).
 - All six were generated via the Higgsfield MCP (`nano_banana_pro`, aspect 3:2, 2 variants each shown
