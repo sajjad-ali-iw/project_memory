@@ -31,9 +31,24 @@ Why Index World audits end in action → case-study carousel → FAQ (8) → CTA
 - **Audit imagery must be REAL PHOTOS**, not illustrations — *"real work picture… like an audit is
   being done."* Rationale: audit is a credibility/trust sale. This is the OPPOSITE of
   [[odoo-customization-page]], which uses bright generated illustrations.
-  **Image work is currently ON HOLD** at the owner's request — 5 candidate Unsplash photos were
-  approved then paused. Process step images and the hero image are still the old placeholder set
-  (hero is a generic reused `about-cta-realistic.png`).
+  **Image work resumed 2026-08-15 and the HERO IS DONE.** Library id 3361
+  `/wp-content/uploads/2026/08/odoo-audit-hero.webp` (1100×730) replaced the generic reused
+  `about-cta-realistic.png`. **Superseded the same day by id 3371
+  `odoo-audit-hero-laptop.webp`** — same yellow flat-lay language (magnifying glass + twin-bell alarm
+  clock) but with an open laptop showing a colourful dashboard instead of the lettered card.
+  **Why the card version lost:** the hero's own white "WHAT WE CHECK" card is absolutely positioned
+  bottom-left (`.ix-srv-hero__card{left:18px;bottom:18px;width:248px}`) and sat directly on top of the
+  black card, hiding the word "AUDIT". **Rule for any future hero image here: keep the bottom-left
+  quadrant empty** and put the subject right-of-centre. Flipping an existing photo to do this does not
+  work when a clock is in frame — the dial mirrors and the numerals come out backwards; regenerate
+  instead. The retired card version (id 3361) is still in the Library, unreferenced.
+  **The 5 process-step images are now DONE too** (2026-08-15, Library ids 3387–3391, all 1000×750
+  WebP): Discovery call / System review / Process review / Findings & report / Implement & support.
+  Brief was *"like /odoo-implementation/ but better … real … preferably bright colors"*, so they are
+  deliberately sunlit and saturated against that page's dim corporate set. Note steps 3 and 4 had been
+  pointing at odoo-implementation's own files, which is why the owner read them as look-alikes. The 5
+  Unsplash candidates approved before the earlier pause were never used. See [[image-library-log]].
+  An Odoo-logo-on-the-card version was generated and rejected — the owner said *"forgot odoo logo"*.
 
 ## Competitor benchmark — silverdaletech.com/audit
 
