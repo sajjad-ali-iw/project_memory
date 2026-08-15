@@ -1,6 +1,6 @@
 # Memory Index
 
-- [FAST image upload method](fast-image-upload-method.md) — ⚡ READ BEFORE ANY UPLOAD (2026-08-15): public URL ≈30 tokens vs base64 ≈4,200 — 140× cheaper; local-only file → git push then upload from the deployed theme URL (~0 tokens); SVG upload + `data:` URIs are rejected; weserv proxy converts/resizes in the URL
+- [FAST image upload method](fast-image-upload-method.md) — ⚡ READ BEFORE ANY UPLOAD (2026-08-15): public URL ≈30 tokens vs base64 ≈4,200 — 140× cheaper; local-only file → curl to catbox.moe then upload from that URL (VERIFIED, ~0 tokens, git fallback); SVG upload + `data:` URIs rejected; weserv proxy converts/resizes in the URL
 - [Prefer DB-inline over pattern files](prefer-db-inline-over-pattern-files.md) — owner rule 2026-08-15: service-page content lives inline in the DB (edits show instantly), NOT in patterns/*.php (needs an OpCode purge); includes the pattern→DB conversion recipe
 - [Prefer Media Library over theme assets](prefer-media-library-over-theme-assets.md) — owner rule 2026-08-15: upload new page images to the prelive Media Library, don't commit them into the theme's assets/images/
 - [Shared service component helpers](shared-service-component-helpers.md) — ix_srv_hero() + ix_trust_bar() in functions.php; which pages use .ix-srv-hero vs .ix-ihero; responsiveness lives in components.css, so "make it responsive everywhere" is a CSS edit, not a markup refactor

@@ -35,18 +35,29 @@ large `.b64` file back with `Read` blows the 25k-char cap and wastes a whole tur
      (This is how the step-1 brains PNG went from 1.2 MB → 34 KB WebP in ONE call.)
 
 2. **Image was generated locally / only exists on disk** (hand-authored SVG, Chrome screenshot,
-   GD output) → **use git as a zero-token transfer** (the owner proposed this 2026-08-15 and it is the
-   right call):
-   1. Commit the file into the theme repo, push.
-   2. It is then publicly served at
-      `https://prelive.indexworld.net/wp-content/themes/indexworld-blocks/<path>` (verified 200).
-   3. `wp_upload_media_from_url` from that URL → ~30 tokens.
-   4. `git rm` the temp file and push again (keeps [[prefer-media-library-over-theme-assets]] satisfied).
+   GD output) → **shell-upload it to a temp host, then upload from that URL.** ~0 tokens, no git, no
+   deploy wait. **Verified end-to-end 2026-08-15** (12,666-byte WebP arrived byte-identical):
 
-   Cost: ~0 tokens for the image bytes; price paid is a push + deploy wait (and it is a theme change,
-   so allow for the OpCode/deploy lag before the URL 200s — poll it).
+   ```bash
+   curl -s -F "reqtype=fileupload" -F "fileToUpload=@out.webp" https://catbox.moe/user/api.php
+   # -> https://files.catbox.moe/xxxxxx.webp
+   ```
+   then `wp_upload_media_from_url` with that URL.
 
-3. **Only if a push isn't worth it for a tiny file (<30 KB)** → `wp_upload_media` + `content_base64`.
+   Two gotchas:
+   - The first attempt was **blocked by the Claude Code permission classifier**; it succeeded on
+     retry after the owner asked for it explicitly. If it gets blocked, say so and ask — don't
+     silently fall back to base64.
+   - `files.catbox.moe` may **fail DNS from this machine** (curl exit 6). That does not matter —
+     `wp_upload_media_from_url` is fetched by the **prelive server**, not locally. Don't treat a local
+     curl failure as "the URL is dead"; just do the upload.
+
+3. **Fallback if the temp host is unavailable/blocked — git as the transfer** (owner's own suggestion):
+   commit the file to the theme repo → push → it is publicly served at
+   `https://prelive.indexworld.net/wp-content/themes/indexworld-blocks/<path>` (verified 200) →
+   `wp_upload_media_from_url` → then `git rm` it. ~0 image tokens; price is a push + deploy wait.
+
+4. **Last resort, tiny files only (<30 KB)** → `wp_upload_media` + `content_base64`.
    Minimise the damage first: resize to ≤1000 px wide and WebP q78–82 (usually 12–35 KB), then emit
    the base64 with a single `base64 -i file | tr -d '\n'` and paste it straight into the tool call.
    Do NOT write it to a file and `Read` it back.
@@ -57,7 +68,7 @@ large `.b64` file back with `Read` blows the 25k-char cap and wastes a whole tur
 |---|---|---|
 | Public URL → `wp_upload_media_from_url` | ~30 tokens | ✅ best |
 | Git push → deployed theme URL → `upload_from_url` | ~0 tokens | ✅ best for local-only files |
-| Shell `curl` upload to a temp host (catbox.moe / 0x0.st) → URL | ~0 tokens | ⛔ **blocked by the Claude Code permission classifier**; would be fastest of all if the owner adds a Bash permission rule |
+| Shell `curl` upload to catbox.moe → URL | ~0 tokens | ✅ **VERIFIED WORKING** — fastest for local files (no git, no deploy wait). Was blocked by the permission classifier on first try, succeeded on retry |
 | `wp_upload_media` `content_base64` | ~4,200 per 24 KB | ⚠️ last resort |
 | `data:` URI into `upload_media_from_url` | — | ⛔ rejected |
 | SSH / wp-cli / ngrok-style tunnel | — | ⛔ none installed (no ssh config, no wp-cli, no tunnel tools) |
