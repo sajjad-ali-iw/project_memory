@@ -14,7 +14,13 @@ logos on the web.** When new imagery is needed, ask the owner for the files and 
 2. **Upload them to the PRELIVE Media Library first** (`royal-mcp-prelive` → `wp_upload_media` /
    `wp_upload_media_from_url`). Prelive is the image source of truth.
 3. **Then** wire the resulting prelive Media Library URLs into the LOCAL theme/section markup.
-4. **The owner pushes the code** — do not commit/push the theme repo unless asked.
+4. **Claude commits and pushes the theme repo** (`git fetch` + check `HEAD..origin/main` for a
+   concurrent session first). **Superseded 2026-08-15** — this file used to say "the owner pushes the
+   code, do not push unless asked", which contradicted [[image-icon-workflow]]. Asked directly, the
+   owner chose **Claude pushes theme code**. The rule above about *sourcing* logos is unchanged: still
+   never go hunting for brand logos yourself. Note the push only deploys the files — a theme CSS
+   change still needs the owner's **LiteSpeed Purge All** to actually show
+   ([[blog-bold-link-color-gotcha]], [[litespeed-purge-and-edge-cache]]).
 
 **Why:** the owner manages all media through the Media Library across environments
 ([[image-webp-media-library]]), and prelive is the shared environment other devs pull from. Logos

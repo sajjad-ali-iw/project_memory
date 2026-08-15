@@ -53,7 +53,13 @@ link-purple and no longer match the plain-black headings on other pages.
 - `.ix-ichal--withsub` drops the H2's bottom margin **50px → 14px** — use it whenever a sub-paragraph
   sits under the heading.
 - `.ix-srv-deliver--wx` is the **3-column** variant of the deliver grid (base is 4-col), and it is
-  already responsive 3→2→1.
+  already responsive 3→2→1. ⚠️ It used to do a **second, unrelated job**: a `@media (max-width:560px)`
+  block also centred the whole card, so each tick row was centred individually and the check icons
+  came out ragged (43–130px of left offset within one card on /odoo-audit/). That centring was added
+  for odoo-implementation's "why an expert" card and every page that just wanted 3 columns inherited
+  it. **Fixed 2026-08-15** (theme commit `89a868b`): card headings stay centred, the list rows are
+  `justify-content:flex-start`. **Lesson: a modifier should carry one job.** If a page needs a
+  different card treatment, add a separate modifier rather than overloading the layout one.
 - `ix-srv-process__body` has **no list CSS**. Bullets under a step need inline
   `style="margin:10px 0 0;padding-left:18px;color:#000;"`. Do **not** add `list-style-type:disc` —
   the owner compared both and preferred the browser's default hollow circles (the `ol ul` nested
