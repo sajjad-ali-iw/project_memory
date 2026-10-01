@@ -7,7 +7,14 @@ metadata:
 
 The owner works through the Odoo cluster one page at a time and expects the **same treatment each
 time** ("you have seen our work pattern"). Applied so far to **odoo-implementation (362)**,
-**odoo-customization (646)**, **odoo-audit (676)** and **odoo-training-services (678)**.
+**odoo-customization (646)**, **odoo-audit (676)**, **odoo-training-services (678)**,
+**odoo-partner (782)**, **odoo-migration (645)**, **odoo-integration-services (717)**,
+**odoo-upgrade-services (715)**, **odoo-accounting (1120)**, **bookkeeping (690)**,
+**payroll-services (1076)**, **quickbooks-services (1078)**, **hire-odoo-developer (728)**
+and **fractional-cfo (1077)**. The recipe now also covers non-Odoo finance pages — payroll,
+bookkeeping, QuickBooks and fractional-CFO all took it unchanged.
+Not every page starts from a pattern file — 717 was already DB-inline, so the conversion step is
+"check first", not "always do".
 
 ## The component swaps (this is what "convert it like the previous pages" means)
 
@@ -17,7 +24,8 @@ time** ("you have seen our work pattern"). Applied so far to **odoo-implementati
 | `ix-srv-stats` (old stat strip) | **`ix_trust_bar()`** → `ix-sup-stats`/`ix-pstat` | The responsive white bar. First stat links to `https://www.odoo.com/partners/index-world-llc-23192027`. |
 | `ix-srv-why` (checklist + image) | **`ix-iwhat ix-iwhy`** + `ix-whyx__c` icon cards | Each reason needs an SVG icon as a 3rd array element. |
 | `ix-ihow` (checklist + side image) | **`ix-srv-process`** numbered steps | `__head` (title + `__sub`), then `<ol class="ix-srv-process__track">` of `__step` → `__thumb` (img + `__num`) + `__body` (`__stitle` + `__sdesc`). |
-| `indexworld/trusted` ("Tools & Frameworks") | delete | Owner removed it on customization and audit. |
+| `indexworld/trusted` ("Tools & Frameworks") | delete | Owner removed it on customization, audit and integration. ⚠️ On **odoo-partner** the `ix-trusted` section was a *client logo wall*, not this pattern — check what the class actually holds before deleting. |
+| `indexworld/service-case-studies` (9-card carousel) | **delete when the page already has a case study** | Owner on odoo-migration: *"drop this cases carousel because looseleaf section is after it is already a case study."* Replace with ONE featured case study built on `ix-iwhat` (image + H2 + 3 purple stat pills + `ix-btn--primary`), which inherits the responsive rules for free. |
 
 Other standard moves: hero buttons → **"Book a Demo" / "Talk to Us"** (short enough for one mobile
 row); remove hero chips; page content must be **DB-inline**, not a pattern file
@@ -64,5 +72,27 @@ link-purple and no longer match the plain-black headings on other pages.
   `style="margin:10px 0 0;padding-left:18px;color:#000;"`. Do **not** add `list-style-type:disc` —
   the owner compared both and preferred the browser's default hollow circles (the `ol ul` nested
   default).
+- **A featured case study reads best right after the process steps**, before the "why us" block
+  (owner moved it there on odoo-migration). Move sections with insert-copy → delete-original so the
+  content can never be lost mid-operation; the content length returning to its exact pre-insert value
+  is the proof the move was clean.
+- **Reordering three adjacent sections: move the two outer ones, never the middle one.** To turn
+  [A, B, C] into [C, B, A], leave B alone and swap A and C — half the markup crosses the wire.
+  `wp_replace_in_page` is literal-only with no regex, so deleting a block means transmitting all of
+  it; pick the ops that transmit the *smallest* blocks. Drop a short sentinel comment
+  (`<!-- IXSWAP-SLOT -->`) where a block is lifted out, then replace the sentinel with the new
+  block — a sentinel is unique, so `expected_count:1` still guards every step even while two copies
+  of similar markup would otherwise be ambiguous. Done on fractional-cfo (1077).
+- **`ix-srv-router` is usually redundant on finance pages.** The purple "if the books are behind,
+  start with bookkeeping" callout tends to repeat what a comparison-table footer note and one or
+  two FAQ answers already say. Before keeping it, grep the rendered page for the routing message —
+  on fractional-cfo it appeared 4 times. Delete the section, but first fold any link that lives
+  *only* there (usually `/payroll-services/`) into the footer note that survives.
+- **Put the price section last, after the credentials block.** Proof -> credentials -> price ->
+  FAQ -> CTA. If `ix-mod-cost` sits before the "why us" block, the number lands before the case
+  for it has been made. Swapped on fractional-cfo (1077).
+- **FAQ answers are the cheapest place to add internal links.** Anchor words that are already in the
+  sentence rather than adding a clause — if the page carries FAQPage JSON-LD, the schema text stays
+  accurate because the wording never changed.
 - Anchor links work out of the box: the theme sets `scroll-behavior:smooth` and
   `scroll-padding-top:96px` for the fixed header. Add `id="…"` to the target section.
